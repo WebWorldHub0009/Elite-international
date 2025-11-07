@@ -113,7 +113,7 @@ const ModernNavbar = () => {
           boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
           zIndex: 50,
         }}
-        className="w-full px-4   py-1 md:px-8"
+        className="w-full px-4  py-1 md:px-8"
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* Logo */}
@@ -127,7 +127,7 @@ const ModernNavbar = () => {
         <img
           src={logo}
           alt="Elite International Trading Co. Logo - Global Export Company from Aligarh"
-          className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
+          className="w-full h-14 object-contain transition-transform duration-500 group-hover:scale-105"
           loading="eager"
           decoding="async"
           fetchpriority="high"
@@ -209,12 +209,14 @@ const ModernNavbar = () => {
               {/* Mobile Header */}
               <div className="flex justify-between items-center">
                 <Link to="/" className="flex items-center gap-2">
-                  <span
-                    className="text-3xl font-semibold"
-                    style={{ color: colors.red }}
-                  >
-                    Duago Foods
-                  </span>
+                   <img
+          src={logo}
+          alt="Elite International Trading Co. Logo - Global Export Company from Aligarh"
+          className="w-full h-14 object-contain transition-transform duration-500 group-hover:scale-105"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        />
                 </Link>
                 <FaTimes
                   style={{ color: colors.black }}
@@ -251,7 +253,7 @@ const ModernNavbar = () => {
               {/* WhatsApp Button */}
               <div className="mt-6">
                 <a
-                  href="https://wa.me/919030327350"
+                  href="https://wa.me/+917618287878"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -277,19 +279,19 @@ const ModernNavbar = () => {
                 <p className="flex items-center gap-2 text-sm">
                   <MdEmail style={{ color: colors.green }} />
                   <a
-                    href="mailto:duagofoods@gmail.com"
+                    href="mailto:eliteinternationaltradingco@gmail.com"
                     className="hover:text-[#3CB371] transition"
                   >
-                    duagofoods@gmail.com
+                   eliteinternationaltradingco@gmail.com
                   </a>
                 </p>
                 <p className="flex items-center gap-2 text-sm">
                   <FaPhoneAlt style={{ color: colors.green }} />
                   <a
-                    href="tel:+919030327350"
+                    href="tel:+917618287878"
                     className="hover:text-[#3CB371] transition"
                   >
-                    +91 9030327350
+                    +91 7618287878
                   </a>
                 </p>
               </div>

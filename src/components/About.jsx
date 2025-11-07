@@ -60,41 +60,42 @@ export default function AboutSection() {
       {/* MAIN CONTENT GRID */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-center mt-14">
 
-        {/* LEFT VISUAL SIDE */}
-        <div className="relative flex justify-center items-center">
-          {/* Orbit Circle */}
-          <div className="absolute w-[25rem] h-[25rem] border border-dashed border-[#D9D9D9] rounded-full"></div>
+       {/* LEFT VISUAL SIDE */}
+<div className="relative flex justify-center items-center">
+  {/* Orbit Circle */}
+  <div className="absolute w-[14rem] h-[14rem] sm:w-[20rem] sm:h-[20rem] md:w-[25rem] md:h-[25rem] border border-dashed border-[#D9D9D9] rounded-full"></div>
 
-          {/* Center Image */}
-          <motion.img
-            src={centerImg}
-            alt="Elite International Trading Company"
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            className="w-72 h-72 md:w-80 md:h-80 object-cover rounded-full shadow-2xl z-10"
-          />
+  {/* Center Image */}
+  <motion.img
+    src={centerImg}
+    alt="Elite International Trading Company"
+    initial={{ scale: 0.9, opacity: 0 }}
+    whileInView={{ scale: 1, opacity: 1 }}
+    transition={{ duration: 0.8 }}
+    className="w-40 h-40 sm:w-56 sm:h-56 md:w-80 md:h-80 object-cover rounded-full shadow-2xl z-10"
+  />
 
-          {/* Orbiting Images */}
-          <motion.img
-            src={client1}
-            alt="Client 1"
-            className="absolute -top-22 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-full object-cover border-4 border-white shadow-lg"
-            whileHover={{ scale: 1.1 }}
-          />
-          <motion.img
-            src={client2}
-            alt="Client 2"
-            className="absolute top-1/2 left-8 transform -translate-y-1/2 w-20 h-20 rounded-full object-cover border-4 border-white shadow-lg"
-            whileHover={{ scale: 1.1 }}
-          />
-          <motion.img
-            src={client3}
-            alt="Client 3"
-            className="absolute -bottom-22 right-1/2 transform translate-x-1/2 w-20 h-20 rounded-full object-cover border-4 border-white shadow-lg"
-            whileHover={{ scale: 1.1 }}
-          />
-        </div>
+  {/* Orbiting Images */}
+  <motion.img
+    src={client1}
+    alt="Client 1"
+    className="absolute -top-12 sm:-top-16 md:-top-22 left-1/2 transform -translate-x-1/2 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full object-cover border-4 border-white shadow-lg"
+    whileHover={{ scale: 1.1 }}
+  />
+  <motion.img
+    src={client2}
+    alt="Client 2"
+    className="absolute top-1/2 left-3 sm:left-6 md:left-8 transform -translate-y-1/2 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full object-cover border-4 border-white shadow-lg"
+    whileHover={{ scale: 1.1 }}
+  />
+  <motion.img
+    src={client3}
+    alt="Client 3"
+    className="absolute -bottom-12 sm:-bottom-16 md:-bottom-22 right-1/2 transform translate-x-1/2 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full object-cover border-4 border-white shadow-lg"
+    whileHover={{ scale: 1.1 }}
+  />
+</div>
+
 
         {/* RIGHT TEXT SIDE */}
         <div className="text-left md:pl-6">

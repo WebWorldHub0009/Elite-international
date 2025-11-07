@@ -63,24 +63,25 @@ const ThoughtAndContact = () => {
           </div>
 
           {/* LinkedIn Buttons */}
-          <div className="flex justify-center items-center gap-4 mt-2">
-            <a
-              href="https://www.linkedin.com/in/arif-ul-islam-khan-62296623?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#8B0000] text-[#8B0000] hover:bg-[#8B0000] hover:text-white transition duration-300 text-sm md:text-base"
-            >
-              <FaLinkedin /> Arif Ul Islam Khan
-            </a>
-            <a
-              href="https://www.linkedin.com/in/eliteinternationaltradingco/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#8B0000] text-[#8B0000] hover:bg-[#8B0000] hover:text-white transition duration-300 text-sm md:text-base"
-            >
-              <FaLinkedin /> Elite International Trading Co.
-            </a>
-          </div>
+<div className="flex justify-center items-center gap-2 sm:gap-4 mt-2 flex-wrap">
+  <a
+    href="https://www.linkedin.com/in/arif-ul-islam-khan-62296623?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-1 sm:gap-2 px-2 py-1 sm:px-4 sm:py-2 rounded-full border border-[#8B0000] text-[#8B0000] hover:bg-[#8B0000] hover:text-white transition duration-300 text-xs sm:text-sm md:text-base"
+  >
+    <FaLinkedin className="text-sm sm:text-base" /> Arif Ul Islam Khan
+  </a>
+  <a
+    href="https://www.linkedin.com/in/eliteinternationaltradingco/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-1 sm:gap-2 px-2 py-1 sm:px-4 sm:py-2 rounded-full border border-[#8B0000] text-[#8B0000] hover:bg-[#8B0000] hover:text-white transition duration-300 text-xs sm:text-sm md:text-base"
+  >
+    <FaLinkedin className="text-sm sm:text-base" /> Elite International Trading Co.
+  </a>
+</div>
+
         </motion.div>
 
         {/* Right Section: CTA */}
