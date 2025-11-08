@@ -155,7 +155,7 @@ const servicesData = [
   },
   {
     title: "Turmeric (Curcuma)",
-    route: "/services/turmeric",
+    route: "/services/turmeric-curcuma-",
     img:img1,
     subtitle: "Golden Health & Flavor",
     quote: "Nature’s golden gift — vibrant and pure.",
@@ -174,7 +174,7 @@ const servicesData = [
   },
   {
     title: "Buffalo Frozen & Chilled Meat",
-    route: "/services/buffalo-meat",
+    route: "/services/buffalo-frozen-chilled-meat",
     img: img1,
     subtitle: "Hygienically Processed Protein",
     quote: "Freshness sealed, quality guaranteed.",
@@ -228,6 +228,84 @@ const servicesData = [
       "Strict quality control",
     ],
     cta: "View Collection",
+  },
+
+
+    {
+    title: "Fresh Vegetables",
+    route: "/services/fresh-vegetables",
+    img: img1,
+    subtitle: "From Farm to Fork, Naturally Fresh",
+    quote: "Nature’s best, packed with care.",
+    overview:
+      "Our Fresh Vegetables are sourced directly from certified farms using organic and sustainable cultivation methods. Each vegetable is handpicked at the right stage of maturity to ensure flavor, freshness, and nutritional value. Elite International Trading Co. employs advanced grading and hygienic packaging standards to maintain product integrity during storage and transport. We serve global clients who value freshness, health, and reliable supply chains for their food businesses.",
+    whyUs:
+      "Guaranteed freshness, eco-friendly supply chain, and consistent export quality.",
+    features: [
+      "Naturally grown vegetables",
+      "Strict hygiene and quality checks",
+      "Sustainable sourcing",
+      "Export-grade packaging",
+      "Cold-chain transportation",
+    ],
+    cta: "Explore Vegetables",
+  },
+  {
+    title: "Whole Chicken",
+    route: "/services/whole-chicken",
+    img: img1,
+    subtitle: "Premium Quality, Farm-Raised Poultry",
+    quote: "Pure taste. Superior quality. Trusted worldwide.",
+    overview:
+      "Elite International Trading Co. offers farm-raised Whole Chicken that meets the highest global food safety and halal standards. Our poultry products are processed in certified facilities, maintaining strict hygiene protocols and cold storage chains to ensure freshness and tenderness. We cater to both domestic and international clients, delivering premium-quality chicken that retains its natural flavor and nutritional value from farm to table.",
+    whyUs:
+      "Strict hygiene, global halal standards, and superior meat quality for export.",
+    features: [
+      "Halal-certified poultry",
+      "High-protein, fresh meat",
+      "Cold storage preservation",
+      "Export-compliant packaging",
+      "Farm-to-table traceability",
+    ],
+    cta: "Explore Chicken",
+  },
+  {
+    title: "Home Decoration Items",
+    route: "/services/home-decoration-items",
+    img: img1,
+    subtitle: "Crafted with Elegance, Designed for Perfection",
+    quote: "Beautify your space with global sophistication.",
+    overview:
+      "Our Home Decoration Items blend craftsmanship with modern aesthetics to create timeless pieces for global interiors. From handcrafted decor to contemporary accents, every item reflects creativity, cultural richness, and enduring quality. At Elite International Trading Co., we partner with skilled artisans and sustainable manufacturers to deliver export-quality decor that enhances every home and office environment.",
+    whyUs:
+      "Global-quality craftsmanship, sustainable materials, and stylish modern appeal.",
+    features: [
+      "Premium handcrafted decor",
+      "Eco-conscious production",
+      "Modern and traditional designs",
+      "Custom export packaging",
+      "Durable and aesthetic materials",
+    ],
+    cta: "Explore Decor",
+  },
+  {
+    title: "Hardware",
+    route: "/services/hardware",
+    img: img1,
+    subtitle: "Precision Built, Globally Trusted",
+    quote: "Strong, reliable, and engineered to last.",
+    overview:
+      "Elite International Trading Co. offers a diverse range of high-quality Hardware products, including tools, fittings, and construction accessories. Our hardware solutions are crafted from durable materials and meet international strength and safety standards. We ensure every shipment is packaged securely and delivered efficiently, supporting industrial, commercial, and construction needs worldwide.",
+    whyUs:
+      "Durable materials, tested performance, and global export reliability.",
+    features: [
+      "Wide range of hardware tools",
+      "Corrosion-resistant materials",
+      "Industrial-grade quality",
+      "Precision engineering",
+      "Custom export packaging",
+    ],
+    cta: "Explore Hardware",
   },
 ];
 

@@ -21,8 +21,8 @@ import img14 from "../assets/gallery/14.jpg";
 import img15 from "../assets/gallery/15.jpg";
 
 const colors = {
-  red: "#8B0000",
-  gold: "#C5A46D",
+  red: "#4FC3F7",
+  gold: "#3CB371",
   white: "#FFFFFF",
   dark: "#1C1C1C",
   gray: "#F8F8F8",
@@ -91,7 +91,7 @@ const Showcase = () => {
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             Explore the excellence of{" "}
-            <span className="font-semibold text-[#8B0000]">
+            <span className="font-semibold text-[#3CB371]">
               Elite International Trading Co.
             </span>{" "}
             — showcasing our global trade expertise, premium exports, and

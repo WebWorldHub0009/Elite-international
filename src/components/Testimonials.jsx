@@ -5,13 +5,15 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
 
-// Elite International Color Palette
+// Updated Color Palette
 const colors = {
-  exportRed: "#C62828",
-  classicBlack: "#1C1C1C",
-  pureWhite: "#FFFFFF",
-  neutralGray: "#D9D9D9",
-  patternGreen: "#3CB371",
+  white: "#FFFFFF",
+  lightGray: "#F2F2F2",
+  darkText: "#2D2D2D",
+  lightBlue: "#4FC3F7",
+  lightGreen: "#3CB371",
+  hoverBlue: "#AEDFF7",
+  hoverGreen: "#BFF0D2",
 };
 
 // Expanded Testimonials (15)
@@ -35,8 +37,11 @@ const testimonials = [
 
 export default function TestimonialSliderElite() {
   return (
-    <section className="relative w-full py-8 px-6 md:px-12 font-[Poppins] bg-classicBlack overflow-hidden">
-      {/* Colorful SVG Background */}
+    <section
+      className="relative w-full py-8 px-6 md:px-12 font-[Poppins] overflow-hidden"
+      style={{ backgroundColor: colors.white, color: colors.darkText }}
+    >
+      {/* Soft Background Gradient */}
       <svg
         className="absolute top-0 left-0 w-full h-full"
         xmlns="http://www.w3.org/2000/svg"
@@ -45,9 +50,9 @@ export default function TestimonialSliderElite() {
       >
         <defs>
           <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor={colors.exportRed} stopOpacity="0.2" />
-            <stop offset="50%" stopColor={colors.patternGreen} stopOpacity="0.2" />
-            <stop offset="100%" stopColor={colors.pureWhite} stopOpacity="0.05" />
+            <stop offset="0%" stopColor={colors.lightBlue} stopOpacity="0.15" />
+            <stop offset="50%" stopColor={colors.lightGreen} stopOpacity="0.15" />
+            <stop offset="100%" stopColor={colors.white} stopOpacity="0.1" />
           </linearGradient>
         </defs>
         <path
@@ -57,15 +62,24 @@ export default function TestimonialSliderElite() {
       </svg>
 
       {/* Floating Glows */}
-      <div className="absolute top-0 right-0 w-72 h-72 rounded-full bg-patternGreen/20 blur-3xl animate-pulse-slow" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-exportRed/15 blur-3xl animate-pulse-slow" />
+      <div
+        className="absolute top-0 right-0 w-72 h-72 rounded-full blur-3xl animate-pulse-slow"
+        style={{ backgroundColor: `${colors.lightGreen}33` }}
+      />
+      <div
+        className="absolute bottom-0 left-0 w-96 h-96 rounded-full blur-3xl animate-pulse-slow"
+        style={{ backgroundColor: `${colors.lightBlue}33` }}
+      />
 
       {/* Section Heading */}
       <div className="relative max-w-6xl mx-auto text-center z-10 mb-12">
-        <h2 className="text-4xl md:text-5xl text-[#C62828] font-bold text-pureWhite mb-4">
-          What Our <span className="text-patternGreen">Clients Say</span>
+        <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: colors.darkText }}>
+          What Our <span style={{ color: colors.lightGreen }}>Clients Say</span>
         </h2>
-        <p className="text-neutralGray text-lg md:text-xl max-w-3xl mx-auto italic">
+        <p
+          className="text-lg md:text-xl max-w-3xl mx-auto italic"
+          style={{ color: colors.darkText }}
+        >
           Trusted globally — delivering premium products and satisfaction across continents.
         </p>
       </div>
@@ -85,30 +99,45 @@ export default function TestimonialSliderElite() {
       >
         {testimonials.map((item, idx) => (
           <SwiperSlide key={idx}>
-            <div className="relative rounded-3xl p-10 hover:shadow-4xl hover:-translate-y-2 transition-transform duration-500 border border-patternGreen/30">
-              {/* Floating Verified Badge */}
-              <span className="absolute -top-5 right-5 text-xs font-semibold px-4 py-1 rounded-full shadow-md"
-                style={{ backgroundColor: colors.exportRed, color: colors.pureWhite }}
+            <div
+              className="relative rounded-3xl p-10 hover:-translate-y-2 transition-transform duration-500 border shadow-md"
+              style={{
+                borderColor: `${colors.lightGreen}55`,
+                backgroundColor: colors.lightGray,
+              }}
+            >
+              {/* Verified Badge */}
+              <span
+                className="absolute -top-5 right-5 text-xs font-semibold px-4 py-1 rounded-full shadow-md"
+                style={{ backgroundColor: colors.lightGreen, color: colors.white }}
               >
                 ★ Verified Client
               </span>
 
               {/* Quote Icon */}
-              <div className="flex justify-center items-center mb-6 text-patternGreen">
+              <div className="flex justify-center items-center mb-6" style={{ color: colors.lightBlue }}>
                 <FaQuoteLeft className="text-4xl opacity-80" />
               </div>
 
               {/* Testimonial Text */}
-              <p className="text-neutralGray text-base md:text-lg italic leading-relaxed mb-6">
+              <p
+                className="text-base md:text-lg italic leading-relaxed mb-6"
+                style={{ color: colors.darkText }}
+              >
                 {item.text}
               </p>
 
               {/* Author */}
               <div className="text-center">
-                <p className="font-bold text-xl text-patternGreen">
-                  {item.name} <span className="text-neutralGray text-sm">({item.country})</span>
+                <p className="font-bold text-xl" style={{ color: colors.lightGreen }}>
+                  {item.name}{" "}
+                  <span className="text-sm" style={{ color: colors.darkText }}>
+                    ({item.country})
+                  </span>
                 </p>
-                <p className="text-neutralGray/80 text-sm">{item.title}</p>
+                <p className="text-sm opacity-80" style={{ color: colors.darkText }}>
+                  {item.title}
+                </p>
               </div>
             </div>
           </SwiperSlide>

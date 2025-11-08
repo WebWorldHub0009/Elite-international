@@ -10,9 +10,8 @@ import {
   FaEnvelope,
   FaUserTie,
 } from "react-icons/fa";
-import bg from "../assets/hero/dg2.jpg";
+import bg from "../assets/hero/elite2.jpg";
 import ContactHero from "../components/ContactHero";
-import MapSection from "../components/MapSection";
 
 const services = [
   { title: "Rice Semi Milled" },
@@ -35,13 +34,15 @@ const services = [
   { title: "Garments" },
 ];
 
-// 🎨 Official Color Palette
+// 🌿 Updated Light Color Palette
 const colors = {
-  exportRed: "#C62828",
-  black: "#1C1C1C",
   white: "#FFFFFF",
-  gray: "#D9D9D9",
-  green: "#3CB371",
+  lightGray: "#F2F2F2",
+  darkText: "#2D2D2D",
+  lightBlue: "#4FC3F7",
+  lightGreen: "#3CB371",
+  hoverBlue: "#AEDFF7",
+  hoverGreen: "#BFF0D2",
 };
 
 const Contact = () => {
@@ -49,16 +50,16 @@ const Contact = () => {
     <>
       <ContactHero />
 
-      <section className="w-full min-h-screen flex flex-col lg:flex-row bg-[#FFFFFF] text-[#1C1C1C]">
+      <section className="w-full min-h-screen flex flex-col lg:flex-row bg-[#FFFFFF] text-[#2D2D2D]">
         {/* Left Panel: Company Info */}
-        <div className="w-full lg:w-1/2 bg-[#FFFFFF] px-10 py-16 shadow-2xl flex flex-col justify-center relative overflow-hidden">
+        <div className="w-full lg:w-1/2 bg-[#F2F2F2] px-10 py-16 shadow-2xl flex flex-col justify-center relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full opacity-5 bg-[url('https://img.freepik.com/free-photo/world-map-background_53876-94603.jpg')] bg-cover bg-center"></div>
 
           <h2
             className="text-5xl font-bold mb-6 pb-3 inline-block border-b-4 z-10"
             style={{
-              borderColor: colors.exportRed,
-              color: colors.exportRed,
+              borderColor: colors.lightBlue,
+              color: colors.lightGreen,
               fontFamily: "'Playfair Display', serif",
             }}
           >
@@ -67,33 +68,37 @@ const Contact = () => {
 
           <div className="space-y-5 text-lg z-10">
             <div className="flex items-start gap-3">
-              <FaMapMarkerAlt size={22} style={{ color: colors.green }} />
+              <FaMapMarkerAlt size={22} style={{ color: colors.lightGreen }} />
               <p className="leading-relaxed">
-                Dorrah Mafi, Aligarh - 202002,<br /> Uttar Pradesh, India
+                Elite International Trading Co.
+                <br />
+                402, Dhorrah Mafi
+                <br />
+                Aligarh - 202002
               </p>
             </div>
             <div className="flex items-center gap-3">
-              <FaPhoneAlt size={22} style={{ color: colors.green }} />
+              <FaPhoneAlt size={22} style={{ color: colors.lightGreen }} />
               <p>+91 7618287878</p>
             </div>
             <div className="flex items-center gap-3">
-              <FaEnvelope size={22} style={{ color: colors.green }} />
+              <FaEnvelope size={22} style={{ color: colors.lightGreen }} />
               <p>Info@theliteco.com</p>
             </div>
             <div className="flex items-center gap-3">
-              <FaEnvelope size={22} style={{ color: colors.green }} />
-              <p>arif.exportsales@gmail.com</p>
+              <FaEnvelope size={22} style={{ color: colors.lightGreen }} />
+              <p>theliteco6@gmail.com</p>
             </div>
           </div>
 
           <div className="mt-5 space-y-2 text-lg z-10">
             <div className="flex items-center gap-3">
-              <FaUserTie size={22} style={{ color: colors.green }} />
+              <FaUserTie size={22} style={{ color: colors.lightBlue }} />
               <p>
-                <span className="font-semibold text-[#1C1C1C]">
+                <span className="font-semibold text-[#2D2D2D]">
                   Co-Founder & Director:
                 </span>{" "}
-                — Arif ul Islam Khan
+                — Arif Khan
               </p>
             </div>
           </div>
@@ -105,7 +110,7 @@ const Contact = () => {
                 <Icon
                   key={i}
                   className="hover:scale-110 transition transform duration-300 cursor-pointer"
-                  style={{ color: colors.exportRed }}
+                  style={{ color: colors.lightBlue }}
                 />
               )
             )}
@@ -118,18 +123,21 @@ const Contact = () => {
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${bg})` }}
           />
-          <div className="absolute inset-0 bg-[#1C1C1C]/70" />
+          <div
+            className="absolute inset-0"
+           
+          />
 
           <form
-            action="https://formsubmit.co/arif.exportsales@gmail.com"
+            action="https://formsubmit.co/theliteco6@gmail.com"
             method="POST"
             className="relative z-10 w-full max-w-lg px-8 py-12"
           >
             <h3
               className="text-3xl font-semibold mb-6 border-b-2 inline-block"
               style={{
-                borderColor: colors.exportRed,
-                color: colors.white,
+                borderColor: colors.white,
+                color: colors.lightBlue,
                 fontFamily: "'Playfair Display', serif",
               }}
             >
@@ -142,36 +150,36 @@ const Contact = () => {
                 name="name"
                 placeholder="Your Name"
                 required
-                className="bg-transparent border-b border-[#D9D9D9] text-white placeholder-[#D9D9D9] py-2 focus:border-[#C62828] outline-none"
+                className="bg-transparent border-b border-[#F2F2F2] text-black placeholder-[#8b8888] py-2 focus:border-[#FFFFFF] outline-none"
               />
               <input
                 type="email"
                 name="email"
                 placeholder="Your Email"
                 required
-                className="bg-transparent border-b border-[#D9D9D9] text-white placeholder-[#D9D9D9] py-2 focus:border-[#C62828] outline-none"
+                className="bg-transparent border-b border-[#F2F2F2] text-white placeholder-[#8b8888] py-2 focus:border-[#FFFFFF] outline-none"
               />
               <input
                 type="text"
                 name="address"
                 placeholder="Your Address"
                 required
-                className="bg-transparent border-b border-[#D9D9D9] text-white placeholder-[#D9D9D9] py-2 focus:border-[#C62828] outline-none"
+                className="bg-transparent border-b border-[#F2F2F2] text-white placeholder-[#8b8888] py-2 focus:border-[#FFFFFF] outline-none"
               />
               <input
                 type="text"
                 name="phone"
                 placeholder="Mobile Number"
                 required
-                className="bg-transparent border-b border-[#D9D9D9] text-white placeholder-[#D9D9D9] py-2 focus:border-[#C62828] outline-none"
+                className="bg-transparent border-b border-[#F2F2F2] text-white placeholder-[#8b8888] py-2 focus:border-[#FFFFFF] outline-none"
               />
 
               <select
                 name="service"
                 required
-                className="bg-transparent border-b border-[#D9D9D9] text-white py-2 focus:border-[#C62828] outline-none"
+                className="bg-transparent border-b border-[#F2F2F2] text-gray-800 py-2 focus:border-[#FFFFFF] outline-none"
               >
-                <option value="" disabled selected className="text-gray-400">
+                <option value="" disabled selected className="text-gray-800">
                   Select Service
                 </option>
                 {services.map((s, i) => (
@@ -186,7 +194,7 @@ const Contact = () => {
                 placeholder="Your Message"
                 required
                 rows={4}
-                className="col-span-full bg-transparent border-b border-[#D9D9D9] text-white placeholder-[#D9D9D9] py-2 focus:border-[#C62828] outline-none"
+                className="col-span-full bg-transparent border-b border-[#F2F2F2] text-white placeholder-[#8b8888] py-2 focus:border-[#FFFFFF] outline-none"
               />
             </div>
 
@@ -194,7 +202,7 @@ const Contact = () => {
               type="submit"
               className="w-full py-3 font-semibold rounded-full transition duration-300 hover:scale-105 shadow-lg"
               style={{
-                backgroundColor: colors.exportRed,
+                backgroundColor: colors.lightBlue,
                 color: colors.white,
                 fontFamily: "'Playfair Display', serif",
               }}
@@ -211,7 +219,6 @@ const Contact = () => {
           </form>
         </div>
       </section>
-      <MapSection/>
     </>
   );
 };

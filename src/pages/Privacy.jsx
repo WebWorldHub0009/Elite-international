@@ -3,22 +3,30 @@ import { motion } from "framer-motion";
 import { FaUserShield, FaEnvelopeOpenText } from "react-icons/fa";
 
 const colors = {
-  red: "#C62828",
-  green: "#3CB371",
   white: "#FFFFFF",
-  black: "#1C1C1C",
-  gray: "#D9D9D9",
+  lightGray: "#F2F2F2",
+  darkText: "#2D2D2D",
+  lightBlue: "#4FC3F7",
+  lightGreen: "#3CB371",
+  hoverBlue: "#AEDFF7",
+  hoverGreen: "#BFF0D2",
 };
 
 const PrivacyPolicy = () => {
   return (
     <section
-      className="min-h-screen w-full py-20 px-6 md:px-20 relative overflow-hidden font-[Poppins]"
-      style={{ backgroundColor: colors.black }}
+      className="min-h-screen w-full py-10 px-6 md:px-20 relative overflow-hidden font-[Poppins]"
+      style={{ backgroundColor: colors.white, color: colors.darkText }}
     >
       {/* 🔆 Background Glows */}
-      <div className="absolute top-10 left-10 w-[300px] h-[300px] bg-[#3CB371]/20 rounded-full blur-[140px] animate-pulse"></div>
-      <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-[#C62828]/20 rounded-full blur-[160px] animate-pulse"></div>
+      <div
+        className="absolute top-10 left-10 w-[300px] h-[300px] rounded-full blur-[140px] animate-pulse"
+        style={{ backgroundColor: colors.hoverGreen }}
+      ></div>
+      <div
+        className="absolute bottom-10 right-10 w-[400px] h-[400px] rounded-full blur-[160px] animate-pulse"
+        style={{ backgroundColor: colors.hoverBlue }}
+      ></div>
 
       {/* 🔒 Header Section */}
       <motion.div
@@ -30,33 +38,33 @@ const PrivacyPolicy = () => {
         <div className="flex justify-center mb-6">
           <FaUserShield
             size={60}
-            className="text-[#3CB371] drop-shadow-[0_0_15px_rgba(60,179,113,0.5)]"
+            className="drop-shadow-[0_0_10px_rgba(79,195,247,0.4)]"
+            style={{ color: colors.lightGreen }}
           />
         </div>
         <h1
           className="text-4xl md:text-6xl font-bold mb-3"
-          style={{
-            background:
-              "linear-gradient(90deg, #3CB371, #D4AF37, #C62828, #3CB371)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
+         
+          
         >
           Privacy Policy
         </h1>
-        <p className="text-[#D9D9D9] text-sm md:text-base">
-          Effective Date: <span className="text-[#3CB371]">31/03/2024</span>
+        <p className="text-sm md:text-base">
+          Effective Date:{" "}
+          <span className="font-semibold" style={{ color: colors.lightGreen }}>
+            31/03/2024
+          </span>
         </p>
       </motion.div>
 
       {/* 📜 Main Content */}
-      <div className="relative z-10 max-w-5xl mx-auto text-[#D9D9D9] space-y-10 leading-relaxed">
+      <div className="relative z-10 max-w-5xl mx-auto space-y-10 leading-relaxed">
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
         >
-          <span className="text-[#3CB371] font-semibold">
+          <span className="font-semibold" style={{ color: colors.lightGreen }}>
             Elite International Trading Co.
           </span>{" "}
           (“we,” “us,” or “our”) is committed to protecting the privacy and
@@ -137,15 +145,19 @@ const PrivacyPolicy = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2, duration: 0.7 }}
-            className="bg-[#1C1C1C]/70 backdrop-blur-sm border border-[#3CB371]/10 rounded-2xl p-6 hover:border-[#3CB371]/30 hover:shadow-[0_0_20px_rgba(60,179,113,0.2)] transition-all duration-300"
+            className="rounded-2xl p-6 shadow-md border transition-all duration-300 hover:shadow-lg"
+            style={{
+              backgroundColor: colors.lightGray,
+              borderColor: colors.hoverGreen,
+            }}
           >
             <h3
               className="text-2xl font-semibold mb-4"
-              style={{ color: colors.green }}
+              style={{ color: colors.lightGreen }}
             >
               {section.title}
             </h3>
-            <ul className="space-y-2 text-gray-300">
+            <ul className="space-y-2">
               {section.content.map((item, i) => (
                 <li key={i}>{item}</li>
               ))}
@@ -153,7 +165,7 @@ const PrivacyPolicy = () => {
           </motion.div>
         ))}
 
-        {/* Footer Section */}
+        {/* 📩 Footer Section */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -162,17 +174,19 @@ const PrivacyPolicy = () => {
         >
           <FaEnvelopeOpenText
             size={40}
-            className="mx-auto mb-4 text-[#3CB371] drop-shadow-[0_0_10px_rgba(60,179,113,0.4)]"
+            className="mx-auto mb-4 drop-shadow-[0_0_10px_rgba(79,195,247,0.4)]"
+            style={{ color: colors.lightBlue }}
           />
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="max-w-2xl mx-auto">
             For more details about how{" "}
-            <span className="text-[#3CB371] font-medium">
+            <span className="font-medium" style={{ color: colors.lightGreen }}>
               Elite International Trading Co.
             </span>{" "}
             manages and protects your information, feel free to{" "}
             <a
               href="/contact"
-              className="text-[#C62828] hover:underline font-semibold"
+              className="font-semibold hover:underline"
+              style={{ color: colors.lightBlue }}
             >
               contact us
             </a>

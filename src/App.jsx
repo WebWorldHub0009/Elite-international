@@ -27,8 +27,8 @@ const App = () => {
    <Route path='/gallery' element={<Gallery/>}/>
     <Route path='/video' element={<Video/>}/>
    <Route path='/contact' element={<Contact/>}/>
-   <Route path='/privacy' element={<Privacy/>}/>
-   <Route path='/terms&condition' element={<Terms/>}/>
+   <Route path='/privacy-policy' element={<Privacy/>}/>
+   <Route path='/terms-condition' element={<Terms/>}/>
  </Routes>
  <Footer/>
  <FloatingButtons/>

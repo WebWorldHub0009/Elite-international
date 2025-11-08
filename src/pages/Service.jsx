@@ -18,36 +18,6 @@ const Service = () => {
     <>
       <ProductHero/>
       <EliteProductsSection/>
-
-      {/* ✨ Interactive Call-to-Action Section */}
-      <section className="relative w-full py-5 bg-black font-[Poppins] overflow-hidden flex justify-center items-center">
-      
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="relative z-10 p-5 text-center  transition-transform duration-500"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#3CB371]">
-            Ready to Elevate Your Exports?
-          </h2>
-          <p className="text-gray-300 mb-6">
-            Explore our premium range of products and discover why Elite International Trading Company is trusted globally. Don’t just trade, trade in style!
-          </p>
-          <motion.div 
-            whileHover={{ scale: 1.05, rotate: 2 }} 
-            className="inline-flex items-center gap-3"
-          >
-            <Link 
-              to="/contact" 
-              className="px-8 py-3 rounded-full bg-gradient-to-r from-[#3CB371] to-[#C62828] text-white font-semibold shadow-lg flex items-center justify-center gap-2 transition-all duration-300"
-            >
-              Get Started <FaArrowRight className="text-sm"/>
-            </Link>
-          </motion.div>
-        </motion.div>
-      </section>
     </>
   )
 }

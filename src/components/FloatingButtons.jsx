@@ -59,14 +59,14 @@ const FloatingButtons = () => {
       {/* Main Toggle Button with Ripple Effect */}
       <div className="relative">
         {/* Animated Rings */}
-        <span className="absolute inset-0 rounded-full bg-red-400 animate-ping-slow"></span>
-        <span className="absolute inset-0 rounded-full bg-red-200 animate-ping-slower"></span>
+        <span className="absolute inset-0 rounded-full bg-blue-400 animate-ping-slow"></span>
+        <span className="absolute inset-0 rounded-full bg-green-200 animate-ping-slower"></span>
         <span className="absolute inset-0 rounded-full bg-white/70 animate-ping-slowest"></span>
 
         <motion.button
           onClick={toggleButtons}
           whileTap={{ scale: 0.9 }}
-          className="cursor-pointer relative w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-red-500 to-red-700
+          className="cursor-pointer relative w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-[#6ec1eb] to-[#3f9ac7]
             flex items-center justify-center
             shadow-2xl overflow-hidden hover:scale-105 transition-all duration-300"
         >

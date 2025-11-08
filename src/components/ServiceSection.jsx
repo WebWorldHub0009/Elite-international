@@ -1,6 +1,6 @@
 // src/components/EliteProductsSection.jsx
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // ✅ import navigation hook
+import { Link, useNavigate } from "react-router-dom"; // ✅ import navigation hook
 import productImg from "../assets/home/beef.jpg";
 
 const services = [
@@ -12,9 +12,9 @@ const services = [
   { title: "Ginger", img: productImg, desc: "Fresh, organic ginger for culinary and medicinal use." },
   { title: "Saffron", img: productImg, desc: "Top-grade saffron, handpicked and naturally dried for premium quality." },
   { title: "Turmeric (Curcuma)", img: productImg, desc: "Curcuma longa powder and rhizomes. Complementary medicine approved." },
-  { title: "Thyme", img: productImg, desc: "Fresh thyme leaves sourced from natural farms." },
-  { title: "Bay Leaves", img: productImg, desc: "Fragrant bay leaves ideal for culinary seasoning." },
-  { title: "Curry & Other Spice Mixtures", img: productImg, desc: "Blended spice mixtures for authentic flavors." },
+  // { title: "Thyme", img: productImg, desc: "Fresh thyme leaves sourced from natural farms." },
+  // { title: "Bay Leaves", img: productImg, desc: "Fragrant bay leaves ideal for culinary seasoning." },
+  // { title: "Curry & Other Spice Mixtures", img: productImg, desc: "Blended spice mixtures for authentic flavors." },
   { title: "Buffalo Frozen & Chilled Meat", img: productImg, desc: "Frozen and chilled sheep & mutton carcass and cubes, premium quality." },
   { title: "Whole Chicken", img: productImg, desc: "Fresh, hygienically packed whole chicken for global standards." },
   { title: "Fresh Fruits", img: productImg, desc: "Handpicked fresh fruits for retail and export quality." },
@@ -50,7 +50,7 @@ const EliteProductsSection = () => {
       <div className="bg-[#FFFFFF] w-full md:w-[30%] flex flex-col p-10 md:p-12 lg:p-16 relative z-10 shadow-xl">
         <div className="flex flex-col gap-6 mb-8">
           <span className="text-xl font-bold tracking-wide">
-            Elite <span className="text-[#C62828]">International Trading</span>
+            Elite <span className="text-[#AEDFF7]">International Trading</span>
           </span>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-[Poppins] font-bold leading-tight">
             Premium <br />
@@ -62,12 +62,12 @@ const EliteProductsSection = () => {
           <p className="text-[#515151] text-sm sm:text-base leading-relaxed">
             Explore our wide range of high-quality products — rice, coffee, spices, fresh fruits & vegetables, frozen meats, home decor, garments, and more.
           </p>
-          <a
-            href="/contact"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-[#C62828] text-white rounded-md shadow-lg hover:opacity-90 transition font-semibold text-sm sm:text-base w-fit"
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[#3CB371] text-white rounded-md shadow-lg hover:opacity-90 transition font-semibold text-sm sm:text-base w-fit"
           >
             Get in Touch
-          </a>
+          </Link>
         </div>
       </div>
 

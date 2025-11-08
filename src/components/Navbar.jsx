@@ -6,33 +6,36 @@ import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
+  FaWhatsapp,
   FaHome,
   FaInfoCircle,
+  FaBoxOpen,
+  FaImages,
+  FaEnvelope,
   FaPhoneAlt,
-  FaAward,
-  FaWhatsapp,
-  FaPhotoVideo,
-  FaVideo,
+  FaClock,
 } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
 import { MdEmail } from "react-icons/md";
-import logo from "../assets/elitelogo.png"
+import { Link, useLocation } from "react-router-dom";
+import logo from "../assets/elitelogo.png";
 
 const colors = {
-  red: "#C62828",
-  black: "#1C1C1C",
   white: "#FFFFFF",
-  gray: "#D9D9D9",
-  green: "#3CB371",
+  lightGray: "#F2F2F2",
+  darkText: "#2D2D2D",
+  lightBlue: "#4FC3F7",
+  lightGreen: "#3CB371",
+  hoverBlue: "#AEDFF7",
+  hoverGreen: "#BFF0D2",
 };
 
+// Navigation items with icons
 const navItems = [
   { name: "Home", path: "/", icon: <FaHome /> },
   { name: "About", path: "/about", icon: <FaInfoCircle /> },
-  { name: "Products", path: "/services", icon: <FaAward /> },
-  { name: "Gallery", path: "/gallery", icon: <FaPhotoVideo /> },
-  // { name: "Video", path: "/video", icon: <FaVideo /> },
-  { name: "Contact", path: "/contact", icon: <FaPhoneAlt /> },
+  { name: "Products", path: "/services", icon: <FaBoxOpen /> },
+  { name: "Gallery", path: "/gallery", icon: <FaImages /> },
+  { name: "Contact", path: "/contact", icon: <FaEnvelope /> },
 ];
 
 const socialLinks = {
@@ -41,7 +44,7 @@ const socialLinks = {
   linkedin: "https://www.linkedin.com/",
 };
 
-const ModernNavbar = () => {
+export default function ModernNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { pathname } = useLocation();
   const panelRef = useRef(null);
@@ -49,111 +52,69 @@ const ModernNavbar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (panelRef.current && !panelRef.current.contains(event.target)) {
+    const handleClickOutside = (e) => {
+      if (panelRef.current && !panelRef.current.contains(e.target)) {
         setIsMenuOpen(false);
       }
     };
     if (isMenuOpen) document.addEventListener("mousedown", handleClickOutside);
-    else document.removeEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isMenuOpen]);
 
   const navLinkStyle = (path) => ({
-    display: "flex",
-    alignItems: "center",
-    gap: "6px",
-    padding: "6px 10px",
-    cursor: "pointer",
-    fontFamily: "'Poppins', sans-serif",
-    color: pathname === path ? colors.red : colors.black,
+    color: pathname === path ? colors.lightGreen : colors.darkText,
     fontWeight: pathname === path ? "600" : "400",
-    transition: "all 0.3s ease",
-    position: "relative",
-    letterSpacing: "0.5px",
+    fontFamily: "'Poppins', sans-serif",
+    padding: "6px 12px",
+    transition: "color 0.3s ease",
   });
 
   return (
     <>
-      {/* Desktop Top Header */}
+      {/* ======= TOP HEADER ======= */}
       <div
-        className="hidden md:block"
+        className="hidden md:block border-b"
         style={{
-          background: colors.black,
-          color: colors.white,
+          backgroundColor: colors.lightGray,
+          color: colors.darkText,
           fontFamily: "'Poppins', sans-serif",
           fontSize: "14px",
-          borderBottom: `2px solid ${colors.red}`,
+          borderColor: "#E5E5E5",
         }}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-2">
-          <p className="flex items-center gap-2">
-            <MdEmail style={{ color: colors.green }} />
-            <a
-              href="mailto:eliteinternationaltradingco@gmail.com"
-              className="hover:text-[#3CB371] transition"
-            >
-             eliteinternationaltradingco@gmail.com
-            </a>
-          </p>
+          <div className="flex items-center gap-8">
+            <p className="flex items-center gap-2">
+              <FaPhoneAlt style={{ color: colors.lightGreen }} />
+              <a
+                href="tel:+917618287878"
+                className="hover:text-[#3CB371] transition"
+              >
+                +91 7618287878
+              </a>
+            </p>
 
-          <p className="flex items-center gap-2">
-            <FaPhoneAlt style={{ color: colors.green }} />
-            <a href="tel:+917618287878" className="hover:text-[#3CB371] transition">
-            +91 7618287878
-            </a>
-          </p>
-        </div>
-      </div>
+            <p className="flex items-center gap-2">
+              <MdEmail style={{ color: colors.lightGreen }} />
+              <a
+                href="mailto:theliteco6@gmail.com"
+                className="hover:text-[#3CB371] transition"
+              >
+                theliteco6@gmail.com
+              </a>
+            </p>
 
-      {/* Main Navbar */}
-      <nav
-        style={{
-          backgroundColor: colors.white,
-          boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
-          zIndex: 50,
-        }}
-        className="w-full px-4  py-1 md:px-8"
-      >
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          {/* Logo */}
-            <Link
-      to="/"
-      className="flex items-center gap-2 group transition-all duration-300 hover:opacity-90"
-      aria-label="Elite International Trading Co. - Home"
-    >
-      {/* Logo Wrapper */}
-      <div className="w-32 sm:w-40 md:w-48 lg:w-56 xl:w-60">
-        <img
-          src={logo}
-          alt="Elite International Trading Co. Logo - Global Export Company from Aligarh"
-          className="w-full h-14 object-contain transition-transform duration-500 group-hover:scale-105"
-          loading="eager"
-          decoding="async"
-          fetchpriority="high"
-        />
-      </div>
+            <p className="flex items-center gap-2">
+              <FaClock style={{ color: colors.lightGreen }} />
+              <span>
+                Mon – Sat:{" "}
+                <span className="text-sm text-gray-600">9 AM – 6 PM IST</span>
+              </span>
+            </p>
+          </div>
 
-      {/* Optional Text (for SEO & accessibility, can be hidden visually) */}
-      <span className="sr-only">
-        Elite International Trading Co. — Exporters of Rice, Coffee, Spices, Garments, and More
-      </span>
-    </Link>
-
-          {/* Desktop Nav */}
-          <ul className="hidden md:flex gap-3 text-sm uppercase">
-            {navItems.map((item) => (
-              <li key={item.path}>
-                <Link to={item.path} style={navLinkStyle(item.path)}>
-                  {item.icon}
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          {/* Desktop Social Icons */}
-          <div className="hidden md:flex items-center gap-3">
+          {/* Social icons */}
+          <div className="flex items-center gap-3">
             {Object.entries(socialLinks).map(([k, url]) => {
               const Icon =
                 k === "facebook"
@@ -167,131 +128,135 @@ const ModernNavbar = () => {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{
-                    width: "34px",
-                    height: "34px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    borderRadius: "50%",
-                    backgroundColor: colors.white,
-                    color: colors.red,
-                    border: `1px solid ${colors.red}`,
-                    transition: "all 0.3s ease",
-                  }}
-                  className="hover:bg-[#C62828] hover:text-white"
+                  className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-300 hover:bg-[#3CB371] hover:text-white transition"
                 >
-                  <Icon size={14} />
+                  <Icon size={13} />
                 </a>
               );
             })}
           </div>
+        </div>
+      </div>
 
-          {/* Mobile Hamburger */}
-          <div style={{ color: colors.black }} className="md:hidden">
-            <FaBars onClick={toggleMenu} className="cursor-pointer text-2xl" />
+      {/* ======= MAIN NAVBAR ======= */}
+      <nav
+        className="w-full shadow-sm z-50"
+        style={{ backgroundColor: colors.white }}
+      >
+        <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3 md:py-2">
+          {/* LOGO + NAME */}
+          <Link to="/" className="flex items-center gap-3">
+            <img
+              src={logo}
+              alt="Elite International Trading Co. Logo"
+              className="h-14 w-auto object-contain"
+            />
+            <span
+              className="text-lg sm:text-xl font-bold tracking-wide"
+              style={{
+                color: colors.darkText,
+                fontFamily: "'Poppins', sans-serif",
+              }}
+            >
+              Elite International Trading Co.
+            </span>
+          </Link>
+
+          {/* DESKTOP MENU WITH ICONS */}
+          <ul className="hidden md:flex gap-6">
+            {navItems.map((item) => (
+              <li key={item.path}>
+                <Link
+                  to={item.path}
+                  style={navLinkStyle(item.path)}
+                  className="flex items-center gap-2 hover:text-[#4FC3F7] transition"
+                >
+                  <span className="text-[16px]">{item.icon}</span>
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* MOBILE ICON */}
+          <div className="md:hidden">
+            <FaBars
+              onClick={toggleMenu}
+              className="cursor-pointer text-2xl"
+              style={{ color: colors.darkText }}
+            />
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* ======= MOBILE MENU ======= */}
         {isMenuOpen && (
           <div className="fixed inset-0 z-50 flex justify-end">
             <div
               ref={panelRef}
-              style={{
-                width: "75vw",
-                maxWidth: "20rem",
-                background: colors.white,
-                boxShadow: "-2px 0 8px rgba(0,0,0,0.1)",
-              }}
-              className="h-full px-6 py-4 flex flex-col"
+              className="h-full w-3/4 max-w-xs bg-white shadow-2xl p-6 flex flex-col justify-between"
             >
-              {/* Mobile Header */}
-              <div className="flex justify-between items-center">
-                <Link to="/" className="flex items-center gap-2">
-                   <img
-          src={logo}
-          alt="Elite International Trading Co. Logo - Global Export Company from Aligarh"
-          className="w-full h-14 object-contain transition-transform duration-500 group-hover:scale-105"
-          loading="eager"
-          decoding="async"
-          fetchpriority="high"
-        />
-                </Link>
-                <FaTimes
-                  style={{ color: colors.black }}
-                  className="text-xl cursor-pointer"
-                  onClick={toggleMenu}
-                />
-              </div>
-
-              <hr className="my-4 border-gray-200" />
-
-              {/* Mobile Nav Links */}
-              <nav className="flex flex-col gap-3 text-sm">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "6px",
-                      color:
-                        pathname === item.path ? colors.red : colors.black,
-                      fontWeight: pathname === item.path ? "600" : "400",
-                      fontFamily: "'Poppins', sans-serif",
-                    }}
+              {/* Top Logo + Close */}
+              <div>
+                <div className="flex justify-between items-center mb-6">
+                  <img src={logo} alt="Logo" className="h-12 object-contain" />
+                  <FaTimes
                     onClick={toggleMenu}
-                  >
-                    {item.icon}
-                    {item.name}
-                  </Link>
-                ))}
-              </nav>
+                    className="text-2xl cursor-pointer"
+                    style={{ color: colors.darkText }}
+                  />
+                </div>
 
-              {/* WhatsApp Button */}
-              <div className="mt-6">
-                <a
-                  href="https://wa.me/+917618287878"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    width: "100%",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: "8px",
-                    borderRadius: "9999px",
-                    backgroundColor: colors.green,
-                    color: colors.white,
-                    fontWeight: "600",
-                    padding: "10px",
-                  }}
-                  className="hover:bg-green-700 transition"
-                >
-                  <FaWhatsapp /> WhatsApp Us
-                </a>
+                {/* Menu Links with Icons */}
+                <nav className="flex flex-col gap-4">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={toggleMenu}
+                      style={{
+                        color:
+                          pathname === item.path
+                            ? colors.lightGreen
+                            : colors.darkText,
+                        fontFamily: "'Poppins', sans-serif",
+                        fontWeight: pathname === item.path ? "600" : "400",
+                      }}
+                      className="flex items-center gap-3 hover:text-[#4FC3F7] transition"
+                    >
+                      <span className="text-lg">{item.icon}</span>
+                      {item.name}
+                    </Link>
+                  ))}
+                </nav>
+
+                {/* WhatsApp Button */}
+                <div className="mt-8">
+                  <a
+                    href="https://wa.me/+917618287878"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center gap-2 bg-[#3CB371] text-white font-semibold py-3 rounded-full hover:bg-green-600 transition"
+                  >
+                    <FaWhatsapp /> WhatsApp Us
+                  </a>
+                </div>
               </div>
 
-              {/* Mobile Email & Phone at Bottom */}
-              <div className="mt-auto pt-6 border-t border-gray-200 flex flex-col gap-2">
-                <p className="flex items-center gap-2 text-sm">
-                  <MdEmail style={{ color: colors.green }} />
-                  <a
-                    href="mailto:eliteinternationaltradingco@gmail.com"
-                    className="hover:text-[#3CB371] transition"
-                  >
-                   eliteinternationaltradingco@gmail.com
+              {/* Bottom Contact Info */}
+              <div className="border-t mt-6 pt-4 text-sm text-gray-700 space-y-2">
+                <p className="flex items-center gap-2">
+                  <FaPhoneAlt className="text-[#3CB371]" />{" "}
+                  <a href="tel:+917618287878" className="hover:text-[#4FC3F7]">
+                    +91 7618287878
                   </a>
                 </p>
-                <p className="flex items-center gap-2 text-sm">
-                  <FaPhoneAlt style={{ color: colors.green }} />
+                <p className="flex items-center gap-2">
+                  <MdEmail className="text-[#4FC3F7]" />{" "}
                   <a
-                    href="tel:+917618287878"
-                    className="hover:text-[#3CB371] transition"
+                    href="mailto:theliteco6@gmail.com"
+                    className="hover:text-[#3CB371]"
                   >
-                    +91 7618287878
+                    theliteco6@gmail.com
                   </a>
                 </p>
               </div>
@@ -299,11 +264,7 @@ const ModernNavbar = () => {
 
             {/* Overlay */}
             <div
-              className="flex-1"
-              style={{
-                background: "rgba(0,0,0,0.3)",
-                backdropFilter: "blur(4px)",
-              }}
+              className="flex-1 bg-black/40 backdrop-blur-sm"
               onClick={() => setIsMenuOpen(false)}
             />
           </div>
@@ -311,6 +272,4 @@ const ModernNavbar = () => {
       </nav>
     </>
   );
-};
-
-export default ModernNavbar;
+}
