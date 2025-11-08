@@ -1,27 +1,39 @@
 // src/components/EliteProductsSection.jsx
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom"; // ✅ import navigation hook
-import productImg from "../assets/home/beef.jpg";
+
+import img1 from "../assets/service/rice-semi.jpg"
+import img2 from "../assets/service/basmati.jpg"
+import img3 from "../assets/service/milled.jpg"
+import img4 from "../assets/service/coffe.jpg"
+import img5 from "../assets/service/chai.jpg"
+import img6 from "../assets/service/ginger.avif"
+import img7 from "../assets/service/saffron.avif"
+import img8 from "../assets/service/meat.avif"
+import img9 from "../assets/service/chicken.avif"
+import img10 from "../assets/service/fruit.avif"
+import img11 from "../assets/service/vegi.avif"
+import img12 from "../assets/service/hardware.jpg"
+import img13 from "../assets/service/home-decor.jpg"
+import img14 from "../assets/service/garment.jpg"
+import img15 from "../assets/service/turmeric.avif"
 
 const services = [
-  { title: "Rice Semi Milled", img: productImg, desc: "High-quality semi-milled rice perfect for all culinary uses." },
-  { title: "Glazed Basmati Rice", img: productImg, desc: "Aromatic and premium glazed basmati rice for international standards." },
-  { title: "Wholly Milled Rice", img: productImg, desc: "Adheres to stringent quality standards and ensures superior taste." },
-  { title: "Coffee", img: productImg, desc: "Our commitment to quality begins at the source, delivering rich flavor." },
-  { title: "Chai Patti", img: productImg, desc: "Premium tea leaves for a refreshing and aromatic tea experience." },
-  { title: "Ginger", img: productImg, desc: "Fresh, organic ginger for culinary and medicinal use." },
-  { title: "Saffron", img: productImg, desc: "Top-grade saffron, handpicked and naturally dried for premium quality." },
-  { title: "Turmeric (Curcuma)", img: productImg, desc: "Curcuma longa powder and rhizomes. Complementary medicine approved." },
-  // { title: "Thyme", img: productImg, desc: "Fresh thyme leaves sourced from natural farms." },
-  // { title: "Bay Leaves", img: productImg, desc: "Fragrant bay leaves ideal for culinary seasoning." },
-  // { title: "Curry & Other Spice Mixtures", img: productImg, desc: "Blended spice mixtures for authentic flavors." },
-  { title: "Buffalo Frozen & Chilled Meat", img: productImg, desc: "Frozen and chilled sheep & mutton carcass and cubes, premium quality." },
-  { title: "Whole Chicken", img: productImg, desc: "Fresh, hygienically packed whole chicken for global standards." },
-  { title: "Fresh Fruits", img: productImg, desc: "Handpicked fresh fruits for retail and export quality." },
-  { title: "Fresh Vegetables", img: productImg, desc: "High-quality vegetables sourced from certified farms." },
-  { title: "Hardware", img: productImg, desc: "Durable and reliable hardware for all construction and industrial needs." },
-  { title: "Home Decoration Items", img: productImg, desc: "Elegant and premium home decor items for modern interiors." },
-  { title: "Garments", img: productImg, desc: "High-quality garments adhering to international fashion standards." },
+  { title: "Rice Semi Milled", img: img1, desc: "High-quality semi-milled rice perfect for all culinary uses." },
+  { title: "Glazed Basmati Rice", img: img2, desc: "Aromatic and premium glazed basmati rice for international standards." },
+  { title: "Wholly Milled Rice", img: img3, desc: "Adheres to stringent quality standards and ensures superior taste." },
+  { title: "Coffee", img: img4, desc: "Our commitment to quality begins at the source, delivering rich flavor." },
+  { title: "Chai Patti", img: img5, desc: "Premium tea leaves for a refreshing and aromatic tea experience." },
+  { title: "Ginger", img: img6, desc: "Fresh, organic ginger for culinary and medicinal use." },
+  { title: "Saffron", img: img7, desc: "Top-grade saffron, handpicked and naturally dried for premium quality." },
+  { title: "Turmeric (Curcuma)", img: img15, desc: "Curcuma longa powder and rhizomes. Complementary medicine approved." },
+  { title: "Buffalo Frozen & Chilled Meat", img: img8, desc: "Frozen and chilled sheep & mutton carcass and cubes, premium quality." },
+  { title: "Whole Chicken", img: img9, desc: "Fresh, hygienically packed whole chicken for global standards." },
+  { title: "Fresh Fruits", img: img10, desc: "Handpicked fresh fruits for retail and export quality." },
+  { title: "Fresh Vegetables", img: img11, desc: "High-quality vegetables sourced from certified farms." },
+  { title: "Hardware", img: img12, desc: "Durable and reliable hardware for all construction and industrial needs." },
+  { title: "Home Decoration Items", img: img13, desc: "Elegant and premium home decor items for modern interiors." },
+  { title: "Garments", img: img14, desc: "High-quality garments adhering to international fashion standards." },
 ];
 
 const EliteProductsSection = () => {

@@ -1,23 +1,19 @@
 // src/data/servicesData.js
-// import rice from "../assets/home/rice.jpg";
-// import basmati from "../assets/home/basmati.jpg";
-// import wholly from "../assets/home/wholly.jpg";
-// import coffee from "../assets/home/coffee.jpg";
-// import tea from "../assets/home/tea.jpg";
-// import ginger from "../assets/home/ginger.jpg";
-// import saffron from "../assets/home/saffron.jpg";
-// import turmeric from "../assets/home/turmeric.jpg";
-// import thyme from "../assets/home/thyme.jpg";
-// import bay from "../assets/home/bay.jpg";
-// import spiceMix from "../assets/home/spicemix.jpg";
-// import meat from "../assets/home/meat.jpg";
-// import chicken from "../assets/home/chicken.jpg";
-// import fruits from "../assets/home/fruits.jpg";
-// import vegetables from "../assets/home/vegetables.jpg";
-// import hardware from "../assets/home/hardware.jpg";
-// import decor from "../assets/home/decor.jpg";
-// import garments from "../assets/home/garments.jpg";
-import img1 from "../assets/home/mutton.jpg"
+import img1 from "../assets/service/rice-semi.jpg"
+import img2 from "../assets/service/basmati.jpg"
+import img3 from "../assets/service/milled.jpg"
+import img4 from "../assets/service/coffe.jpg"
+import img5 from "../assets/service/chai.jpg"
+import img6 from "../assets/service/ginger.avif"
+import img7 from "../assets/service/saffron.avif"
+import img8 from "../assets/service/meat.avif"
+import img9 from "../assets/service/chicken.avif"
+import img10 from "../assets/service/fruit.avif"
+import img11 from "../assets/service/vegi.avif"
+import img12 from "../assets/service/hardware.jpg"
+import img13 from "../assets/service/home-decor.jpg"
+import img14 from "../assets/service/garment.jpg"
+import img15 from "../assets/service/turmeric.avif"
 
 const servicesData = [
   {
@@ -42,7 +38,7 @@ const servicesData = [
   {
     title: "Glazed Basmati Rice",
     route: "/services/glazed-basmati-rice",
-    img: img1,
+    img: img2,
     subtitle: "Aromatic & Luxurious Grain",
     quote: "Every grain tells a story of heritage and excellence.",
     overview:
@@ -61,7 +57,7 @@ const servicesData = [
   {
     title: "Wholly Milled Rice",
     route: "/services/wholly-milled-rice",
-    img: img1,
+    img: img3,
     subtitle: "Fully Processed Excellence",
     quote: "Pure, refined, and processed to perfection.",
     overview:
@@ -80,7 +76,7 @@ const servicesData = [
   {
     title: "Coffee",
     route: "/services/coffee",
-    img: img1,
+    img: img4,
     subtitle: "Freshly Roasted Perfection",
     quote: "From farm to cup — pure excellence in every sip.",
     overview:
@@ -99,7 +95,7 @@ const servicesData = [
   {
     title: "Chai Patti",
     route: "/services/chai-patti",
-    img: img1,
+    img: img5,
     subtitle: "Rich Aroma & Authentic Taste",
     quote: "Brew happiness, one cup at a time.",
     overview:
@@ -118,7 +114,7 @@ const servicesData = [
   {
     title: "Ginger",
     route: "/services/ginger",
-    img: img1,
+    img: img6,
     subtitle: "Pure & Organic Roots",
     quote: "Naturally grown, globally trusted.",
     overview:
@@ -137,7 +133,7 @@ const servicesData = [
   {
     title: "Saffron",
     route: "/services/saffron",
-    img: img1,
+    img: img7,
     subtitle: "Luxury in Every Thread",
     quote: "Handpicked saffron of unmatched purity and aroma.",
     overview:
@@ -156,7 +152,7 @@ const servicesData = [
   {
     title: "Turmeric (Curcuma)",
     route: "/services/turmeric-curcuma-",
-    img:img1,
+    img:img15,
     subtitle: "Golden Health & Flavor",
     quote: "Nature’s golden gift — vibrant and pure.",
     overview:
@@ -175,7 +171,7 @@ const servicesData = [
   {
     title: "Buffalo Frozen & Chilled Meat",
     route: "/services/buffalo-frozen-chilled-meat",
-    img: img1,
+    img: img8,
     subtitle: "Hygienically Processed Protein",
     quote: "Freshness sealed, quality guaranteed.",
     overview:
@@ -194,7 +190,7 @@ const servicesData = [
   {
     title: "Fresh Fruits",
     route: "/services/fresh-fruits",
-    img:img1,
+    img:img10,
     subtitle: "Naturally Ripened & Export-Ready",
     quote: "Freshness that travels the world.",
     overview:
@@ -213,7 +209,7 @@ const servicesData = [
   {
     title: "Garments",
     route: "/services/garments",
-    img: img1,
+    img: img14,
     subtitle: "Style Beyond Borders",
     quote: "Where craftsmanship meets global fashion.",
     overview:
@@ -229,12 +225,10 @@ const servicesData = [
     ],
     cta: "View Collection",
   },
-
-
-    {
+  {
     title: "Fresh Vegetables",
     route: "/services/fresh-vegetables",
-    img: img1,
+    img: img11,
     subtitle: "From Farm to Fork, Naturally Fresh",
     quote: "Nature’s best, packed with care.",
     overview:
@@ -253,7 +247,7 @@ const servicesData = [
   {
     title: "Whole Chicken",
     route: "/services/whole-chicken",
-    img: img1,
+    img: img9,
     subtitle: "Premium Quality, Farm-Raised Poultry",
     quote: "Pure taste. Superior quality. Trusted worldwide.",
     overview:
@@ -272,7 +266,7 @@ const servicesData = [
   {
     title: "Home Decoration Items",
     route: "/services/home-decoration-items",
-    img: img1,
+    img: img13,
     subtitle: "Crafted with Elegance, Designed for Perfection",
     quote: "Beautify your space with global sophistication.",
     overview:
@@ -291,7 +285,7 @@ const servicesData = [
   {
     title: "Hardware",
     route: "/services/hardware",
-    img: img1,
+    img: img12,
     subtitle: "Precision Built, Globally Trusted",
     quote: "Strong, reliable, and engineered to last.",
     overview:
