@@ -17,7 +17,7 @@ import {
 } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../assets/elitelogo.png";
+import logo from "../assets/logom.png";
 
 const colors = {
   white: "#FFFFFF",
@@ -143,23 +143,15 @@ export default function ModernNavbar() {
         className="w-full shadow-sm z-50"
         style={{ backgroundColor: colors.white }}
       >
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3 md:py-2">
+        <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-2 md:py-1">
           {/* LOGO + NAME */}
-          <Link to="/" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center justify-center gap-2">
             <img
               src={logo}
               alt="Elite International Trading Co. Logo"
-              className="h-14 w-auto object-contain"
+              className="h-18 w-auto object-contain"
             />
-            <span
-              className="text-lg sm:text-xl font-bold tracking-wide"
-              style={{
-                color: colors.darkText,
-                fontFamily: "'Poppins', sans-serif",
-              }}
-            >
-              Elite International Trading Co.
-            </span>
+          
           </Link>
 
           {/* DESKTOP MENU WITH ICONS */}

@@ -1,43 +1,89 @@
 // src/components/HeroSection.jsx
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaArrowDown, FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import {
+  FaArrowDown,
+  FaFacebookF,
+  FaLinkedinIn,
+  FaInstagram,
+} from "react-icons/fa";
+
+// Desktop images
 import img1 from "../assets/hero/elite1.jpg";
 import img2 from "../assets/hero/elite3.jpg";
 import img3 from "../assets/hero/elite7.jpg";
 
-const slides = [
-  {
-    title: "Elite International Trading Company",
-    subtitle: "Premium Quality Meat Exporters",
-    tagline: "Delivering Freshness Beyond Borders",
-    image: img1,
-  },
-  {
-    title: "Global Excellence",
-    subtitle: "Supplying Hygienic, Halal-Certified Meat Worldwide",
-    tagline: "From India to the World — Quality You Can Trust",
-    image: img2,
-  },
-  {
-    title: "Sustainably Sourced",
-    subtitle: "Committed to Purity, Taste, and Freshness",
-    tagline: "Healthy Products, Ethical Practices",
-    image: img3,
-  },
-];
+// Mobile-specific images
+import mImg1 from "../assets/home/mobile1.jpg";
+import mImg2 from "../assets/home/mobile2.jpg";
+import mImg3 from "../assets/home/mobile3.jpg";
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
+  // Detect mobile or desktop screen
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Define slide data
+  const desktopSlides = [
+    {
+      title: "Elite International Trading Company",
+      subtitle: "Premium Quality Meat Exporters",
+      tagline: "Delivering Freshness Beyond Borders",
+      image: img1,
+    },
+    {
+      title: "Global Excellence",
+      subtitle: "Supplying Hygienic, Halal-Certified Meat Worldwide",
+      tagline: "From India to the World — Quality You Can Trust",
+      image: img2,
+    },
+    {
+      title: "Sustainably Sourced",
+      subtitle: "Committed to Purity, Taste, and Freshness",
+      tagline: "Healthy Products, Ethical Practices",
+      image: img3,
+    },
+  ];
+
+  const mobileSlides = [
+    {
+      title: "Elite Trading Co.",
+      subtitle: "Freshness Delivered Worldwide",
+      tagline: "Trusted by Global Clients",
+      image: mImg1,
+    },
+    {
+      title: "Premium Quality",
+      subtitle: "Certified, Hygienic & Fresh",
+      tagline: "Your Global Export Partner",
+      image: mImg2,
+    },
+    {
+      title: "Sustainably Sourced",
+      subtitle: "Pure Taste, Ethical Process",
+      tagline: "Quality that Travels",
+      image: mImg3,
+    },
+  ];
+
+  const slides = isMobile ? mobileSlides : desktopSlides;
+
+  // Auto-slide every 6s
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
     }, 6000);
     return () => clearInterval(timer);
-  }, []);
+  }, [slides.length]);
 
-  // Light theme colors
+  // Light color palette
   const colors = {
     white: "#FFFFFF",
     lightGray: "#F2F2F2",
@@ -49,7 +95,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative w-full h-screen overflow-hidden" >
+    <section className="relative w-full h-screen overflow-hidden">
       {/* Background Slider */}
       {slides.map((slide, index) => (
         <motion.div
@@ -61,9 +107,10 @@ export default function HeroSection() {
           <img
             src={slide.image}
             alt={slide.title}
+            loading="lazy"
             className="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-[4000ms]"
           />
-          <div className="absolute inset-0 " /> {/* soft overlay */}
+          <div className="absolute inset-0" />
         </motion.div>
       ))}
 
@@ -76,8 +123,8 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight text-[#3CB371]"
-            
+            className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight"
+            style={{ color: colors.lightGreen }}
           >
             <span style={{ color: colors.lightBlue }}>
               {slides[current].title.split(" ")[0]}
@@ -126,7 +173,7 @@ export default function HeroSection() {
             className="mt-6 sm:mt-10 flex flex-wrap gap-4 sm:gap-6 justify-end"
           >
             <a
-              href="/products"
+              href="/services"
               className="px-6 py-2 sm:px-8 sm:py-3 rounded-full text-xs sm:text-sm tracking-wide font-medium border transition-all shadow-md"
               style={{
                 color: colors.darkText,
@@ -134,14 +181,12 @@ export default function HeroSection() {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = colors.lightBlue;
-                e.currentTarget.style.color = colors.darkText;
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = "transparent";
-                e.currentTarget.style.color = colors.darkText;
               }}
             >
-              Explore Products
+              Explore Services
             </a>
             <a
               href="/contact"
@@ -171,7 +216,10 @@ export default function HeroSection() {
         className="absolute left-3 sm:left-6 md:left-10 top-1/2 transform -translate-y-1/2 flex flex-col items-center gap-3 sm:gap-4"
         style={{ color: colors.darkText }}
       >
-        <div className="hidden sm:block font-semibold rotate-90 tracking-widest text-xs sm:text-sm mb-6 sm:mb-8" style={{ color: colors.lightBlue }}>
+        <div
+          className="hidden sm:block font-semibold rotate-90 tracking-widest text-xs sm:text-sm mb-6 sm:mb-8"
+          style={{ color: colors.lightBlue }}
+        >
           Elite Intl.
         </div>
         <div
@@ -179,9 +227,27 @@ export default function HeroSection() {
           style={{ backgroundColor: colors.lightBlue }}
         ></div>
         <div className="flex flex-row sm:flex-col gap-4 sm:gap-3 justify-center items-center">
-          <a href="#"><FaFacebookF size={16} className="hover:scale-110 transition" style={{ color: colors.darkText }} /></a>
-          <a href="#"><FaInstagram size={16} className="hover:scale-110 transition" style={{ color: colors.darkText }} /></a>
-          <a href="#"><FaLinkedinIn size={16} className="hover:scale-110 transition" style={{ color: colors.darkText }} /></a>
+          <a href="#">
+            <FaFacebookF
+              size={16}
+              className="hover:scale-110 transition"
+              style={{ color: colors.darkText }}
+            />
+          </a>
+          <a href="#">
+            <FaInstagram
+              size={16}
+              className="hover:scale-110 transition"
+              style={{ color: colors.darkText }}
+            />
+          </a>
+          <a href="#">
+            <FaLinkedinIn
+              size={16}
+              className="hover:scale-110 transition"
+              style={{ color: colors.darkText }}
+            />
+          </a>
         </div>
       </motion.div>
 
@@ -194,7 +260,10 @@ export default function HeroSection() {
         style={{ color: colors.lightBlue }}
       >
         <FaArrowDown size={12} />
-        <span className="text-[10px] sm:text-xs mt-1" style={{ color: colors.darkText }}>
+        <span
+          className="text-[10px] sm:text-xs mt-1"
+          style={{ color: colors.darkText }}
+        >
           Scroll
         </span>
       </motion.div>

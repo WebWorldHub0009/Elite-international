@@ -109,7 +109,7 @@ export default function AboutHeroElite() {
         {/* CTA Buttons */}
         <div className="flex flex-wrap gap-3 sm:gap-4">
           <Link
-            to="/products"
+            to="/services"
             className="px-6 sm:px-8 py-2 sm:py-3 rounded-full text-sm sm:text-base font-semibold transition-all duration-300 shadow-md border"
             style={{
               backgroundColor: colors.lightBlue,
@@ -123,7 +123,7 @@ export default function AboutHeroElite() {
               e.currentTarget.style.backgroundColor = colors.lightBlue;
             }}
           >
-            Explore Products
+            Explore Services
           </Link>
 
           <Link
